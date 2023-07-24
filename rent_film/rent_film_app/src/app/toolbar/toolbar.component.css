@@ -1,0 +1,33 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.zoom .home{
+  font-size: 20px;
+}
+
+.zoom{
+  font-size: 10px;
+}
+
+mat-toolbar{
+  font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  button h1{
+    font-size: 15px;
+  }
+
+  button{
+    font-size: 10px;
+  }
+
+
+}
+
+

@@ -1,0 +1,46 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.component-style mat-card{
+  background-color: #001F99;
+  color:#EDEDED;
+}
+.component-style mat-toolbar{
+  background-color: #001F99;
+  color:#EDEDED;
+}
+
+.component-style mat-label{
+  color: black;
+}
+
+.registration mat-card{
+  border: 2px solid black;
+}
+
+.registration label{
+  color:black;
+}
+
+.component-style .item{
+  background-color: #EDEDED;
+  color:black;
+  border: 2px solid black;
+}
+
+
+.component-style .dialog-generic-style{
+  background-color: #EDEDED;
+  color:black;
+}
+.component-style .dialog-window{
+  background-color: #EDEDED;
+  color:black;
+}
+
+.component-style mat-form-field {
+  color: black;
+}
+
+
+

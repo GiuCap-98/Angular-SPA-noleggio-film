@@ -1,0 +1,123 @@
+.viewport {
+
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.custom-dialog-class {
+  background-color: #f1f1f1;
+  /* Altri stili personalizzati del dialog */
+}
+
+.spacer {
+  flex: 0.1 1 auto;
+}
+
+
+#scroll-up
+{
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+  text-align: center;
+}
+
+.show {
+  visibility: visible;
+}
+
+.field .mat-mdc-text-field-wrapper {
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-right: 30px;
+
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  border-radius: 60px;
+}
+
+.item {
+  border: 1px solid black;
+  margin-top:5%;
+  margin-right: 10%;
+  margin-left: 10%;
+  height: auto;
+  width: auto;
+}
+
+mat-card {
+  padding: 1%;
+  border: 1px solid;
+  box-shadow: 0px 0px 21px 0px #000000;
+}
+
+.details:hover{
+  cursor: pointer;
+}
+
+mat-card-content a{
+  font-weight: bold;
+}
+
+.title{
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.title:hover{
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.paginator-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paginator {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius:50px;
+}
+
+
+
+/* Stili per schermi fino a 480px */
+@media screen and (max-width: 635px) {
+
+  .search-field .mat-mdc-text-field-wrapper {
+
+    margin-left: 10%;
+    margin-right: 0%;
+    margin-top: 10px;
+  }
+  .item {
+    margin: 2%;
+  }
+  .title {
+    font-size: 16px;
+  }
+
+
+
+  .back-to-top-button{
+    size:5px;
+    padding: 10px;
+  }
+}
+
+/* Altri stili per il layout responsive */
+/* Aggiungi qui le tue regole CSS specifiche per il layout responsive */
+

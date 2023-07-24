@@ -1,0 +1,43 @@
+<div class="registration component-style" title="registration content">
+  <mat-card>
+    <mat-card-title class="card-title">
+      <h2 tabindex="0">Registration </h2>
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="register()" role="form" aria-label="form-registration">
+        <mat-form-field>
+          <label for="customer_id">Customer ID:</label>
+          <input matInput formControlName="customer_id" name="customer_id" id="customer_id">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label for="first_name">First Name:</label>
+          <input matInput  formControlName="first_name" name="first_name" id="first_name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label for="last_name">Last Name:</label>
+          <input matInput formControlName="last_name" name="last_name" id="last_name">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label for="email">Email:</label>
+          <input matInput  formControlName="email" name="email" id="email">
+        </mat-form-field>
+
+        <mat-form-field>
+          <label for="password">Password:</label>
+          <input matInput formControlName="password" type="password" name="password" id="password">
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button type="submit" role="button" title="Clicca qui per effettuare la registrazione" aria-label="registration button"><span>Registration</span></button>
+
+        <ul *ngIf="errors.length > 0" class="error-message">
+            <li *ngFor="let error of errors">{{ error }}</li>
+        </ul>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

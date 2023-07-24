@@ -1,0 +1,48 @@
+.dialog-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Calibri;
+  font-size: 20px;
+}
+
+
+
+.list {
+  margin-left: 5px;
+}
+
+.close {
+  float: right;
+}
+
+.title-dialog {
+  margin-bottom: 20px;
+  font-family: serif;
+  font-size: 30px;
+}
+
+.rent-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-rent {
+  font-size: large;
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .title-dialog {
+    font-size: 30px;
+  }
+}
+
+@media screen and (orientation: landscape){
+  .component-style {
+    height: 280px;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="component-style" title="rent form content">
+  <button mat-button aria-label="Go back" class="back-button" (click)="navigateBack()"><span>Go back</span></button>
+
+
+  <mat-card >
+    <mat-card-title class="card-title" tabindex="0">
+      <h2> <strong>{{film.film.title}}</strong> </h2>
+      <br>
+    </mat-card-title>
+    <mat-card-content >
+      <form [formGroup]="form" aria-label="rent form">
+
+        <mat-form-field  >
+          <mat-label aria-label="Select a date for rent">Select a date for rent</mat-label>
+          <mat-select #dayOption formControlName="data" [(ngModel)]="selectedValueData" name="data" aria-required="true">
+            <mat-option  value="today"  (click)="click_data(true)">Today</mat-option>
+            <mat-option  value="in-two-days"  (click)="click_data(true)">In two days</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label aria-label="Select a store">Select a store</mat-label>
+          <mat-select #matOption  formControlName="store" [(ngModel)]="selectedValueStore" name="store"  aria-required="true">
+            <mat-option #matOption *ngFor="let store of stores" [value]="store" [disabled]="!store.num_film" [attr.aria-disabled]="!store.num_film ? 'true' : 'false'"  (click)="click_store(matOption.selected)" >{{store.address.address}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button  type="button" aria-label="Rent button" [attr.aria-labelledby]="hasErrors ? 'error-message' : null" autofocus (click)="rent()">Rent</button>
+          <ul *ngIf="errors.length > 0" class="error-message" id="error-message" aria-label="Errors found" tabindex="0">
+              <li *ngFor="let error of errors" tabindex="0">{{ error }}</li>
+          </ul>
+
+
+    </form>
+    </mat-card-content>
+
+  </mat-card>
+</div>
+
+
+

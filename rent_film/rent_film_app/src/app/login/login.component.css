@@ -1,0 +1,56 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 100%;
+}
+
+mat-card {
+  height: auto;
+  width: auto;
+  padding: 80px;
+}
+mat-card-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+
+}
+
+
+mat-card mat-card-title{
+  font-size: 200%;
+  padding-bottom: 20px;
+}
+
+.div_button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div_button button{
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+
+ul.error-message {
+  list-style: none;
+}
+
+
+@media screen and (max-width: 768px) {
+.login {
+  padding: 20px;
+}
+
+mat-card {
+  padding: 40px;
+}
+
+}

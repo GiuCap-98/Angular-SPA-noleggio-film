@@ -1,0 +1,58 @@
+<div  class="component-style" tabindex="-1">
+<mat-dialog-content  class="dialog-window" tabindex="-1" role="dialog" aria-label="dialog film details" >
+
+  <mat-dialog-actions align="end">
+    <button mat-button class="close" aria-label="Close dialog button" role="button" title="Button for close dialog" (click)="closeDialog()" >
+      <mat-icon aria-hidden="true">close</mat-icon>
+      Close
+    </button>
+  </mat-dialog-actions>
+
+  <br>
+
+  <h2 mat-dialog-title id="{{ film.film.title }}" class="title-dialog" tabindex="0" aria-describedby="dialog-description" >{{ film.film.title }}</h2>
+
+  <mat-list class="list" id="dialog-description" role="list">
+    <mat-list-item role="listitem">
+      <p tabindex="0"><strong>Release year:</strong> {{ film.film.release_year }}</p>
+    </mat-list-item>
+    <mat-list-item role="listitem" >
+     <p tabindex="0"><strong>Language:</strong> {{ film.language.name }}</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+     <p tabindex="0"><strong>Category:</strong> {{ film.category.name }}</p>
+    </mat-list-item>
+    <mat-list-item role="listitem" >
+     <p tabindex="0"><strong>Rental duration:</strong> {{ film.film.rental_duration }}</p>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      <p ><strong>Film duration:</strong> {{ film.film.length }}</p>
+    </mat-list-item >
+    <mat-list-item role="listitem" lines="3">
+      <p tabindex="0" matListItemTitle><strong>Actors:</strong></p>
+      <a *ngFor="let actor of actors" tabindex="0">{{ actor.first_name }} {{ actor.last_name }},</a>
+    </mat-list-item>
+
+    <mat-list-item role="listitem">
+      <p tabindex="0" matListItemTitle> <strong>Stores available: </strong> </p>
+      <ul *ngFor="let store of stores"  tabindex="0">
+        <li *ngIf="store.num_film" matListItemLine >{{ store.address.address }}</li>
+      </ul>
+      <br>
+      <span *ngIf="!storeAvailable(stores)" matListItemLine aria-label="No stores available" tabindex="0"> No stores available for rental  </span>
+    </mat-list-item>
+  </mat-list>
+
+  <div class="rent-button" >
+    <button mat-button aria-label="Rent film button price" role="button" title="Rent film button" [disabled]="!storeAvailable(stores)" [attr.aria-disabled]="!storeAv? 'true' : 'false'" (click)="rent_page(film, stores)" tabindex="0">
+      <a tabindex="0">
+        <mat-icon>
+        <span aria-hidden="true" style="font-size: 15px;">euro</span>
+        </mat-icon>
+        {{ film.film.rental_rate }} RENT
+      </a>
+    </button>
+  </div>
+</mat-dialog-content>
+
+</div>

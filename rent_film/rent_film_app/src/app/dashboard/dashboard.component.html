@@ -1,0 +1,60 @@
+<div class="component-style" title="film dashboard content">
+  <div class="content" title="filter option content">
+    <mat-form-field class="field">
+      <label for="searchbox">Search Films</label>
+      <input matInput type="text" name="searchbox" id="searchbox" role="searchbox" (input)="onSearchTitleChange($event)" />
+      <mat-icon matPrefix aria-hidden="true">search</mat-icon>
+    </mat-form-field>
+
+    <span class="spacer"></span>
+
+    <mat-form-field class="field">
+      <mat-select aria-label="Filter by category" placeholder="Filter by category" >
+        <mat-option *ngFor="let category of categories" role="option" [value]="category" (click)="filterByCategory(category)">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <div role="list" title="card film content">
+    <mat-card class="item" role="listitem" aria-label="Films items" *ngFor="let film of films | slice: startIndex: endIndex" >
+      <mat-card-header>
+      <mat-card-title class="title" aria-label="Film title">
+          <a class="link_details" href="javascript:void(0)" aria-label="Click link title film for open details" (click)="openDetails(film)"> <h2 tabindex="0"> {{film.film.title}} </h2></a>
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p tabindex="0"><strong>Year:</strong> {{ film.film.release_year }}</p>
+        <p tabindex="0"><strong>Language:</strong> {{ film.language.name }}</p>
+        <p tabindex="0"><strong>Category:</strong> {{ film.category.name }}</p>
+        <p tabindex="0"><strong>Description:</strong> <br>{{ film.film.description }}</p>
+        <p tabindex="0"><strong>Rating:</strong> {{ film.film.rating }}</p>
+      </mat-card-content>
+
+
+      <mat-card-actions align="end">
+        <button mat-button aria-label="Rent film button price" role="button" title="Rent film button"  (click)="rent_page(film)">
+          <span tabindex="0"> <mat-icon>
+            <span aria-hidden="true" style="font-size: 15px;">euro</span>
+            </mat-icon>{{ film.film.rental_rate }} RENT</span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <div role="navigation" class="paginator-div" title="paginator content">
+    <!-- Paginazione -->
+    <mat-paginator [length]="numFilms" [pageSize]="pageSize" [pageIndex]="currentPage - 1" (page)="handlePageChange($event)"  aria-label="pagination"></mat-paginator>
+  </div>
+
+  <div id="scroll-up" title="paginator content">
+    <!-- Bottone per tornare all'inizio della pagina -->
+    <button mat-fab class="back-to-top-button" aria-label="Return to top of page button" role="button" title="Button for return to top of page" *ngIf="scrolled == 1" (click)="scrollToTop()" [class.show]="isScrolled">
+      <mat-icon aria-hidden="true">arrow_upward</mat-icon>
+    </button>
+  </div>
+  
+</div>

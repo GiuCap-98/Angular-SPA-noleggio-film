@@ -1,0 +1,32 @@
+<div class="login component-style" title="login content" >
+  <mat-card>
+    <mat-card-content>
+      <h2 tabindex="0">Login</h2>
+
+      <form [formGroup]="form" (ngSubmit)="login()" role="form" aria-label="form login" class="login_">
+
+        <mat-form-field >
+          <label for="email">Email</label>
+          <input matInput  formControlName="email" [(ngModel)]="email" name="email" id="name" aria-label="Username">
+        </mat-form-field>
+
+        <mat-form-field >
+          <label for="password">Password</label>
+          <input matInput formControlName="password" [(ngModel)]="password" name="password" id="password" type="password" aria-label="Password">
+        </mat-form-field>
+
+        <div class="div_button">
+          <button mat-raised-button type="submit" role="button" title="Click here for login" aria-label="login button"><span> Login </span></button>
+          <button mat-raised-button [routerLink]="['/registration']" role="button" title="Click for registration" aria-label="registration button"><span> Registration </span></button>
+        </div>
+        <ul *ngIf="errors.length > 0" class="error-message" >
+          <li *ngFor="let error of errors; index i" tabindex="0"><label>{{ error }}</label></li>
+        </ul>
+
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+

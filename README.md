@@ -9,8 +9,16 @@ Il progetto è stato realizzato soddisfando interamente i requisiti presenti nel
     - lato client: Angular
     - API GraphQL
     - Database: PostgreSQL
+    - WAI-ARIA, Angular Material, WAVE web accessibility tool, axe DevTools, webaim.org contrast checker, chrome vox per implementare e testare l'accessibilità
 
-- accessibilità di livello AA secondo i requisiti di WCAG 2.1 nelle pagine di elenco dei film e dei noleggi effettuati
-- utilizzo di WAI-ARIA, Angular Material, WAVE web accessibility tool, axe DevTools, webaim.org contrast checker, chrome vox per implementare e testare l'accessibilità
-- implementazione di autenticazione ed autorizzazione tramite hashing della password, token, protezione delle route in caso di mancata autenticazione e memorizzazione della sessione attiva
-- gestione della responsiveness tramite CSS e Angular Material
+- Ricerca dei film per titolo
+
+- Filtraggio dei film per categoria
+
+- Ordinamento dei noleggi in base alle caratteristiche 
+
+- Livello AA di WCAG 2.1 nelle pagine di elenco dei film e dei noleggi effettuati
+
+- Autenticazione ed autorizzazione tramite hashing della password, token, protezione delle route e localstorage
+
+- gestione della responsiveness  tramite CSS e Angular Material

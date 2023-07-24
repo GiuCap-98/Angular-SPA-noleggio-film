@@ -1,0 +1,65 @@
+.dialog-window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Calibri;
+  font-size: 20px;
+}
+
+.dialog-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 100px;
+}
+
+.list {
+  margin-left: 10px;
+}
+
+.close {
+  float: right;
+}
+
+.title-dialog {
+  margin-bottom: 20px;
+  font-family: serif;
+  font-size: 30px;
+}
+
+.rent-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-rent {
+  font-size: large;
+  margin-bottom: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .dialog-window {
+    height: 400px;
+    overflow-y: auto;
+  }
+  .title-dialog {
+    font-size: 20px;
+  }
+  .button-rent {
+    font-size: medium;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .dialog-window {
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+  .dialog-content-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 100px;
+  }
+}
